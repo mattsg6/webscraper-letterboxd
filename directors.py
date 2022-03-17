@@ -35,7 +35,7 @@ else:
     print("\nYour most watched directors are: ")
     for d in max_director:
         print(d + ', ', end='')
-    print(" and... that's it!\n", end='')
+    print("and... that's it!\n", end='')
     print(f"\nYou have seen {max_value} films from each of these directors, which is {((max_value*len(max_director)/total_films)*100):.2f}% of the films you have logged.\n")
 
 # Sean Fenessey
