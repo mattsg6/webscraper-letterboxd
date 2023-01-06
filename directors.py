@@ -12,6 +12,8 @@ for f in films:
         response = requests.get(url, timeout=5)
         content = BeautifulSoup(response.content, 'lxml')
         director = content.find('span', {'class':'prettify'}).text
+        # TESTING
+        # print(director)
         if(director in directors):
             directors[director] += 1
         else:
@@ -30,13 +32,13 @@ for key in directors:
 
 if(len(max_director) == 1):
     print(f"\nYour most watched director is {max_director[0]}!\n")
-    print(f"You have seen {directors[max_director[0]]} films directed by {max_director[0]}, which is {((max_value/total_films) * 100):.2f}% of the films you have logged.\n")
+    print(f"You have logged {directors[max_director[0]]} films directed by {max_director[0]}, which is {((max_value/total_films) * 100):.2f}% of the films you have logged.\n")
 else:
     print("\nYour most watched directors are: ")
     for d in max_director:
         print(d + ', ', end='')
     print("and... that's it!\n", end='')
-    print(f"\nYou have seen {max_value} films from each of these directors, which makes up {((max_value*len(max_director)/total_films)*100):.2f}% of the films you have logged.\n")
+    print(f"\nYou have logged {max_value} films from each of these directors, which makes up {((max_value*len(max_director)/total_films)*100):.2f}% of the films you have logged.\n")
 
 # User Martin_Blanke
 # Your most watched director is Alfred Hitchcock!
