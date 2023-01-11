@@ -7,3 +7,7 @@ pip install requests
 pip install beautifulsoup4
 pip install lxml
 ```
+## Running the program
+```
+python directors.py
+```
